@@ -2,17 +2,17 @@
 # 追加・更新するときは PR に理由を書くこと(docs: .claude/agents/developer.md)。
 
 [versions]
-agp = "8.13.0"
-kotlin = "2.2.10"
-ksp = "2.2.10-2.0.2"
-hilt = "2.57.1"
-androidxHilt = "1.2.0"
-coreKtx = "1.17.0"
-lifecycle = "2.9.4"
-activityCompose = "1.10.1"
-composeBom = "2025.09.00"
-room = "2.7.2"
-work = "2.10.2"
+agp = "9.4.1"
+kotlin = "2.4.21"
+ksp = "2.3.12"
+hilt = "2.60.1"
+androidxHilt = "1.4.0"
+coreKtx = "1.19.1"
+lifecycle = "2.11.0"
+activityCompose = "1.13.0"
+composeBom = "2026.09.00"
+room = "2.8.5"
+work = "2.12.0"
 retrofit = "3.0.0"
 junit = "4.13.2"
 
@@ -52,7 +52,6 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
