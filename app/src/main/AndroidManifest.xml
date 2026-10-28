@@ -5,7 +5,7 @@
     <!--
         INTERNET 権限は同期 Worker(T09)で追加する。
         通信は HTTPS のみ(要件 非機能/セキュリティ)。cleartext は network_security_config で禁止する。
-        usesCleartextTraffic は networkSecurityConfig が効かない場合の保険として明示する。
+        usesCleartextTraffic は念のため明示する(API 24 以上では network_security_config が優先される)。
     -->
     <application
         android:name=".YakubikiApplication"
@@ -18,8 +18,7 @@
 
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Yakubiki">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

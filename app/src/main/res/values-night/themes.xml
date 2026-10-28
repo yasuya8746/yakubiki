@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ダークモードで起動時に白い画面が一瞬出ないよう、ウィンドウ背景を暗くする -->
+    <style name="Theme.Yakubiki" parent="android:Theme.Material.NoActionBar" />
+</resources>
