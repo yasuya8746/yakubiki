@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 起動時のウィンドウ用テーマ。画面の見た目は Compose の YakubikiTheme で決める -->
+    <style name="Theme.Yakubiki" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

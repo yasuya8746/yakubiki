@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- アプリの表示名 -->
+    <string name="app_name">薬引</string>
+    <!-- β版の表記が必要な場面で使う名称 -->
+    <string name="app_name_beta">薬引 β</string>
+    <!-- 空画面(T03)の仮表示。検索画面(T10)で置き換える -->
+    <string name="home_placeholder">準備中です</string>
+</resources>
