@@ -5,21 +5,38 @@ on:
   push:
     branches: [main]
 
+# 読み取りだけで足りる。書き込み権限をジョブに渡さない
+permissions:
+  contents: read
+
 jobs:
   # ジョブ名 build は main のルールセットの必須チェックに使われている。変えないこと
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # PR の途中のコミットも秘密情報の検査にかけるため、履歴をすべて取得する
+          fetch-depth: 0
       # 差し替えられた gradle-wrapper.jar で任意のコードが動くのを防ぐ
       - name: Validate Gradle Wrapper
         uses: gradle/actions/wrapper-validation@v4
       # 検査はローカルでも同じスクリプトで実行できる(scripts/ci/)。ビルドより先に走らせて早く失敗させる
       - name: Self-test repository checks
         run: bash scripts/ci/test-checks.sh
+      # 自己テストが失敗しても、本番の検査結果は見えるようにする
       - name: Check secrets
-        run: bash scripts/ci/check-secrets.sh
+        if: success() || failure()
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
+            # PR: HEAD のツリーに加え、ベースブランチから先の各コミットで追加された内容も検査する
+            bash scripts/ci/check-secrets.sh --commits "origin/${GITHUB_BASE_REF}..HEAD"
+          else
+            # main への push: HEAD のツリーだけ検査する
+            bash scripts/ci/check-secrets.sh
+          fi
       - name: Check PMDA access
+        if: success() || failure()
         run: bash scripts/ci/check-pmda-access.sh
       - uses: actions/setup-java@v4
         with:
