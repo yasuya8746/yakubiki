@@ -2,11 +2,26 @@
 .gradle/
 /local.properties
 .idea/
-/build/
-/app/build/
+build/
 .DS_Store
 *.jks
 *.keystore
 keystore.properties
 google-services.json
 .env
+.kotlin/
+/captures/
+
+# ネイティブビルドの中間生成物とヒープダンプ
+.cxx/
+.externalNativeBuild/
+*.hprof
+
+# 署名済み成果物(Android Studio の既定出力先を含む)と秘密情報
+/app/release/
+*.apk
+*.aab
+*.p12
+*.pem
+.env.*
+secrets.properties

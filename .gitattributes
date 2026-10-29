@@ -1,0 +1,8 @@
+* text=auto
+*.png binary
+*.webp binary
+
+# Gradle Wrapper scripts: keep platform line endings regardless of core.autocrlf
+/gradlew text eol=lf
+*.bat text eol=crlf
+*.jar binary
