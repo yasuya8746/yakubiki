@@ -48,7 +48,7 @@
 |---|---|---|---|---|
 | T06 | 変換ジョブ: 更新確認・取得・変換・正規化 | developer | 1.5 | T02, T05 |
 | T07 | 変換ジョブ: 品質ゲート・静的配信・通知(上書き表のみの配信を含む) | developer | 1 | T06, D4 |
-| T08 | アプリ: Room スキーマ+FTS 検索 DAO・Repository+同梱データの初期投入 | developer | 1.5 | T05 |
+| T08 | アプリ: Room スキーマ+部分一致検索 DAO(ADR-0005 で FTS から変更)・Repository+同梱データの初期投入 | developer | 1.5 | T05 |
 | T09 | アプリ: 同期 Worker(manifest 確認・ダウンロード・検証・切替) | developer | 1 | T07, T08 |
 
 ### W3: 画面と配布準備
