@@ -1,6 +1,6 @@
 *.iml
 .gradle/
-/local.properties
+local.properties
 .idea/
 build/
 .DS_Store
@@ -25,3 +25,7 @@ google-services.json
 *.pem
 .env.*
 secrets.properties
+*.pfx
+*.key
+*.p8
+GoogleService-Info.plist

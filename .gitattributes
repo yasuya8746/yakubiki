@@ -6,3 +6,6 @@
 /gradlew text eol=lf
 *.bat text eol=crlf
 *.jar binary
+
+# CI のシェルスクリプトは Linux でも動くよう LF に固定する
+*.sh text eol=lf
